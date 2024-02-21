@@ -1,0 +1,43 @@
+   <!--*******  This element is for customised wording for lens/pack instruction sunArc 16/02/24 srk ******* -->
+   <div style="margin-bottom:1rem;" class='Instruction_wording'>
+    {% assign allowedProductTypes = section.settings.product_types | split: "," %}
+    
+    {% if allowedProductTypes contains product.type %}
+       <div id="instructiontext"style= "color:#000000;">{{ section.settings.instructiontext }}</div>
+    {% else %}
+     <p> </p>
+    {% endif %}
+    </div>
+  <!-- ******* This element is for customised wording for lens/pack instruction sunArc 14/02/24 srk ****---Code end-------------  -->
+
+
+  {% schema %}
+    {
+            "type": "header",
+            "content": "Quantity Instruction"
+          },
+           {
+            "type":"text",
+            "id": "product_types",
+            "label": "Please write the product types correctly with commas (,)"
+            },
+           {
+              "type": "richtext",
+              "id": "instructiontext",
+              "label": "Instruction for quantity"
+            }
+    
+  {% endschema %}
+
+
+{% comment %} product Types----
+
+Clear Contacts,Colored Contacts,Crazy Contacts,Mini Sclera Contacts,Sclera Contacts,Sclera UV Contacts
+
+
+
+{% endcomment %}
+
+{% comment %} 
+👉🏻 Please take note of the product packaging. E.g.1 lens/pack means there is ONLY 1 single lens. Please add Qty "2" in your cart if you need a pair.
+{% endcomment %}
